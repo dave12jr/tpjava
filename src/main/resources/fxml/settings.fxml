@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblio.controller.SettingsController" fx:id="root">
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Paramètres (réservés à l’administrateur)"/>
+            <Label text="(Ecran placeholder)"/>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Accueil" onAction="#onBack"/>
+            <Label text="Version 1.0.0"/>
+        </HBox>
+    </bottom>
+</BorderPane>

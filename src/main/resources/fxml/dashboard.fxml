@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblio.controller.DashboardController">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="Fichier">
+                    <MenuItem text="Déconnexion" onAction="#logout"/>
+                </Menu>
+                <Menu text="Gestion">
+                    <MenuItem fx:id="menuUsersItem" text="Utilisateurs" onAction="#openUsers"/>
+                    <MenuItem fx:id="menuCategoriesItem" text="Catégories" onAction="#openCategories"/>
+                    <MenuItem text="Livres" onAction="#openBooks"/>
+                    <MenuItem text="Adhérents" onAction="#openMembers"/>
+                    <MenuItem text="Emprunts" onAction="#openLoans"/>
+                </Menu>
+                <Menu text="Paramètres">
+                    <MenuItem fx:id="menuSettingsItem" text="Paramètres" onAction="#openSettings"/>
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <Label text="Tableau de bord" />
+                <Separator orientation="VERTICAL"/>
+                <Button fx:id="btnUsers" text="Utilisateurs" onAction="#openUsers"/>
+                <Button fx:id="btnBooks" text="Livres" onAction="#openBooks"/>
+                <Button fx:id="btnMembers" text="Adhérents" onAction="#openMembers"/>
+                <Button fx:id="btnLoans" text="Emprunts" onAction="#openLoans"/>
+                <Separator orientation="VERTICAL"/>
+                <Button fx:id="btnSettings" text="Paramètres" onAction="#openSettings"/>
+                <Button fx:id="btnCategories" text="Catégories" onAction="#openCategories"/>
+                <Button text="Déconnexion" onAction="#logout"/>
+                <Button text="Rafraîchir" onAction="#refreshStats"/>
+            </ToolBar>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="8.0">
+            <HBox spacing="6.0">
+                <Label text="Livres totaux:"/>
+                <Label fx:id="totalLivresLabel" text="0"/>
+            </HBox>
+            <HBox spacing="6.0">
+                <Label text="Emprunts du mois:"/>
+                <Label fx:id="empruntsMoisLabel" text="0"/>
+            </HBox>
+            <HBox spacing="6.0">
+                <Label text="Adhérents actifs:"/>
+                <Label fx:id="adherentsActifsLabel" text="0"/>
+            </HBox>
+            <TitledPane text="Retards (en cours)" expanded="true">
+                <content>
+                    <TableView fx:id="overduesTable">
+                        <columns>
+                            <TableColumn fx:id="colOvLivre" text="Livre" prefWidth="200"/>
+                            <TableColumn fx:id="colOvAdherent" text="Adhérent" prefWidth="160"/>
+                            <TableColumn fx:id="colOvPrev" text="Retour prévu" prefWidth="120"/>
+                            <TableColumn fx:id="colOvJours" text="Jours retard" prefWidth="100"/>
+                        </columns>
+                    </TableView>
+                </content>
+            </TitledPane>
+        </VBox>
+    </center>
+</BorderPane>

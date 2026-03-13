@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblio.controller.BooksController">
+    <top>
+        <HBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <TextField fx:id="searchField" promptText="Rechercher titre, auteur ou ISBN"/>
+            <CheckBox fx:id="availableOnlyCheck" text="Dispo uniquement"/>
+            <Button text="Rechercher" onAction="#onSearch"/>
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="table" onMouseClicked="#onSelect">
+            <columns>
+                <TableColumn fx:id="colIsbn" text="ISBN" prefWidth="120"/>
+                <TableColumn fx:id="colTitre" text="Titre" prefWidth="220"/>
+                <TableColumn fx:id="colAuteur" text="Auteur" prefWidth="160"/>
+                <TableColumn fx:id="colCategorie" text="Catégorie" prefWidth="140"/>
+                <TableColumn fx:id="colAnnee" text="Année" prefWidth="80"/>
+                <TableColumn fx:id="colExemplaires" text="Ex." prefWidth="60"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <GridPane hgap="8" vgap="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="ISBN" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="isbnField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Titre" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="titreField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Auteur" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="auteurField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Catégorie" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <ComboBox fx:id="categorieCombo" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <Label text="Année" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <Spinner fx:id="anneeSpinner" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+            <Label text="Exemplaires" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+            <Spinner fx:id="exemplairesSpinner" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+            <HBox spacing="8" alignment="CENTER_RIGHT" GridPane.rowIndex="3" GridPane.columnIndex="3">
+                <Button fx:id="newBtn" text="Nouveau" onAction="#onNew"/>
+                <Button fx:id="saveBtn" text="Enregistrer" onAction="#onSave"/>
+                <Button fx:id="deleteBtn" text="Supprimer" onAction="#onDelete"/>
+                <Button fx:id="resetBtn" text="Réinitialiser" onAction="#onReset"/>
+                <Button text="Retour" onAction="#onBack"/>
+            </HBox>
+        </GridPane>
+    </bottom>
+</BorderPane>

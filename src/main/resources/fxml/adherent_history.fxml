@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblio.controller.AdherentHistoryController">
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn fx:id="colLivre" text="Livre" prefWidth="220"/>
+                <TableColumn fx:id="colEmp" text="Emprunt" prefWidth="120"/>
+                <TableColumn fx:id="colPrev" text="Retour prévu" prefWidth="120"/>
+                <TableColumn fx:id="colRet" text="Retour" prefWidth="120"/>
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>

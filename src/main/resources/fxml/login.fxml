@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="12.0" xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblio.controller.LoginController" alignment="CENTER">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    <Label text="Authentification" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <GridPane hgap="10" vgap="10">
+        <Label text="Login:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="loginField" promptText="Votre identifiant" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Mot de passe:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <PasswordField fx:id="passwordField" promptText="Votre mot de passe" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    </GridPane>
+    <HBox spacing="8" alignment="CENTER">
+        <Button fx:id="loginButton" text="Se connecter" onAction="#onLogin" defaultButton="true"/>
+    </HBox>
+    <Label fx:id="statusLabel" textFill="red"/>
+</VBox>

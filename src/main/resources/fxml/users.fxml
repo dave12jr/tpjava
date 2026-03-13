@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblio.controller.UsersController">
+    <center>
+        <TableView fx:id="table" onMouseClicked="#onSelect">
+            <columns>
+                <TableColumn fx:id="colLogin" text="Login" prefWidth="120"/>
+                <TableColumn fx:id="colNom" text="Nom" prefWidth="120"/>
+                <TableColumn fx:id="colPrenom" text="Prénom" prefWidth="120"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="160"/>
+                <TableColumn fx:id="colProfil" text="Profil" prefWidth="140"/>
+                <TableColumn fx:id="colActif" text="Actif" prefWidth="80"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <GridPane hgap="8" vgap="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="20"/>
+                <ColumnConstraints percentWidth="30"/>
+                <ColumnConstraints percentWidth="20"/>
+                <ColumnConstraints percentWidth="30"/>
+            </columnConstraints>
+            <Label text="Login" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="loginField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Mot de passe" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Nom" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="nomField" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <Label text="Prénom" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <TextField fx:id="prenomField" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+            <Label text="Email" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="emailField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Profil" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+            <ComboBox fx:id="profilCombo" GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+            <CheckBox fx:id="actifCheck" text="Actif" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <HBox spacing="8" alignment="CENTER_RIGHT" GridPane.rowIndex="3" GridPane.columnIndex="3">
+                <Button text="Nouveau" onAction="#onNew"/>
+                <Button text="Enregistrer" onAction="#onSave"/>
+                <Button fx:id="deleteBtn" text="Supprimer" onAction="#onDelete"/>
+                <Button fx:id="resetPwdBtn" text="Réinit. mot de passe" onAction="#onResetPassword"/>
+                <Button text="Réinitialiser" onAction="#onReset"/>
+                <Button text="Accueil" onAction="#onBack"/>
+            </HBox>
+        </GridPane>
+    </bottom>
+</BorderPane>

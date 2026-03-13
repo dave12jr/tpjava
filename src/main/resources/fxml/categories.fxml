@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblio.controller.CategoriesController">
+    <center>
+        <TableView fx:id="table" onMouseClicked="#onSelect">
+            <columns>
+                <TableColumn fx:id="colLibelle" text="Libellé" prefWidth="200"/>
+                <TableColumn fx:id="colDescription" text="Description" prefWidth="300"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <GridPane hgap="8" vgap="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Libellé" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="libelleField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Description" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="descriptionField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <HBox spacing="8" alignment="CENTER_RIGHT" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                <Button text="Nouveau" onAction="#onNew"/>
+                <Button text="Enregistrer" onAction="#onSave"/>
+                <Button text="Supprimer" onAction="#onDelete"/>
+                <Button text="Accueil" onAction="#onBack"/>
+            </HBox>
+        </GridPane>
+    </bottom>
+</BorderPane>

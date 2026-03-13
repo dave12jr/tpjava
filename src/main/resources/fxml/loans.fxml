@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+<BorderPane xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.biblio.controller.LoansController">
+    <top>
+        <HBox spacing="8">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Livre"/>
+            <ComboBox fx:id="livreCombo" prefWidth="250"/>
+            <Label text="Adhérent"/>
+            <ComboBox fx:id="adherentCombo" prefWidth="220"/>
+            <Label text="Retour prévu"/>
+            <DatePicker fx:id="datePrevuePicker"/>
+            <Button text="Enregistrer emprunt" onAction="#onRegisterLoan"/>
+            <CheckBox fx:id="openOnlyCheck" text="En cours seulement" />
+            <CheckBox fx:id="overdueOnlyCheck" text="En retard" />
+        </HBox>
+    </top>
+    <center>
+        <TableView fx:id="table">
+            <columns>
+                <TableColumn fx:id="colLivre" text="Livre" prefWidth="200"/>
+                <TableColumn fx:id="colAdherent" text="Adhérent" prefWidth="180"/>
+                <TableColumn fx:id="colDateEmp" text="Emprunt" prefWidth="120"/>
+                <TableColumn fx:id="colDatePrev" text="Retour prévu" prefWidth="120"/>
+                <TableColumn fx:id="colDateRet" text="Retour" prefWidth="120"/>
+                <TableColumn fx:id="colPenalite" text="Pénalité" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="8" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Button text="Filtrer" onAction="#onFilter"/>
+            <Button text="Réinitialiser" onAction="#onReset"/>
+            <Button text="Enregistrer retour" onAction="#onRegisterReturn"/>
+            <Button text="Accueil" onAction="#onBack"/>
+        </HBox>
+    </bottom>
+</BorderPane>

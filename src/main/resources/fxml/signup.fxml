@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="10" xmlns="http://javafx.com/javafx/19.0.2.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.biblio.controller.SignupController">
+    <children>
+        <Label text="Créer un compte utilisateur"/>
+        <GridPane hgap="8" vgap="8">
+            <Label text="Login" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="loginField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Mot de passe" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Confirmer" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <PasswordField fx:id="confirmField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Nom" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="nomField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <Label text="Prénom" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="prenomField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+            <Label text="Email" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="emailField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        </GridPane>
+        <HBox spacing="8">
+            <Button text="Créer" onAction="#onCreate"/>
+            <Button text="Fermer" onAction="#onClose"/>
+        </HBox>
+        <Label fx:id="statusLabel" textFill="green"/>
+    </children>
+</VBox>
